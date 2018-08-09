@@ -10,7 +10,7 @@ namespace BerlinClock
             //try parsing input time
             Time time;
             if (!Time.TryParse(aTime, out time))
-                throw new Exception("Unknown time format");
+                return "Unknown time format";
             return GetLine1(time) + GetLine2(time) + GetLine3(time) + GetLine4(time) +
                    GetLine5(time);
         }
@@ -50,7 +50,6 @@ namespace BerlinClock
         {
             return new string('Y', time.Minute % 5).PadRight(4, 'O');
         }
-
 
     }
 }

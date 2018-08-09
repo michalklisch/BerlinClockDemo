@@ -49,3 +49,31 @@ RRRR
 OOOOOOOOOOO
 OOOO
 """
+
+Scenario: Wrong hour
+When the time is "25:00:00"
+Then the clock should look like
+"""
+Unknown time format
+"""
+
+Scenario: Wrong minute
+When the time is "11:74:00"
+Then the clock should look like
+"""
+Unknown time format
+"""
+
+Scenario: Wrong second
+When the time is "11:43:77"
+Then the clock should look like
+"""
+Unknown time format
+"""
+
+Scenario: Wrong parameter
+When the time is "abc"
+Then the clock should look like
+"""
+Unknown time format
+"""
